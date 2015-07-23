@@ -11,3 +11,86 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
+
+# PATH
+export PATH=$PATH:/Users/bgilbert/.cabal/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin
+
+# Environment Variables
+export DROPBOX_HOME=/Users/bgilbert/Dropbox
+export GROOVY_HOME=/Users/bgilbert/Dropbox/Environment/Java/groovy-1.8.4
+export GRAILS_HOME=/Users/bgilbert/Dropbox/Environment/Java/Grails-1.3.5
+export SCALA_HOME=/Users/bgilbert/Dropbox/Environment/Java/scala-2.10.1
+export PLAY_221_HOME=/Users/bgilbert/Dropbox/Environment/Java/play-2.2.1
+export PLAY_HOME=/Users/bgilbert/Dropbox/Environment/Java/play-2.2.2
+export STORM_HOME=/Users/bgilbert/Dropbox/Environment/Java/storm-0.8.2
+export CLOJURE_HOME=/Users/bgilbert/Dropbox/Environment/Java/clojure-1.5.1
+export LEING_HOME=/Users/bgilbert/Dropbox/Environment/Java/leinengen
+export SBT_HOME=/Users/bgilbert/Dropbox/Environment/Java/sbt
+export EC2_HOME=/Users/bgilbert/Dropbox/Environment/ec2
+export NODE_JIZZ_HOME=/Users/bgilbert/local/node
+export GO_HOME=/usr/local/go
+export ANDROID_HOME=/Users/bgilbert/Dropbox/Environment/Java/android-sdk
+export GRADLE_HOME=/Users/bgilbert/Dropbox/Environment/Java/gradle-1.12
+export GATLING_HOME=/Users/bgilbert/Dropbox/Environment/Java/gatling-charts-highcharts-1.5.1
+export ROBOVM_HOME=/Users/bgilbert/Dropbox/Environment/Java/robovm-0.0.14
+export ACTIVATOR_HOME=/Users/bgilbert/Dropbox/Environment/Java/activator-1.2.10-minimal
+export GOPATH=/Users/bgilbert/go/
+
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ROBOVM_HOME/bin
+
+# Path Updates
+export PATH=$PATH:$GROOVY_HOME/bin
+export PATH=$PATH:$GRAILS_HOME/bin
+export PATH=$PATH:$GRADLE_HOME/bin
+export PATH=$PATH:$SCALA_HOME/bin
+export PATH=$PATH:$PLAY_HOME
+export PATH=$PATH:$PLAY_221_HOME
+export PATH=$PATH:$STORM_HOME/bin
+export PATH=$PATH:$CLOJURE_HOME
+export PATH=$PATH:$LEING_HOME
+export PATH=$PATH:$SBT_HOME/bin
+export PATH=$PATH:$EC2_HOME/bin
+export PATH=$PATH:$NODE_JIZZ_HOME/bin
+export PATH=$PATH:$GO_HOME/bin
+export PATH=$PATH:$GATLING_HOME/bin
+#export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ACTIVATOR_HOME
+export PATH=$GOPATH/bin:$PATH
+
+# MacPorts at the End
+export PATH=$PATH:/opt/custom/bin:/opt/custom/sbin:/opt/local/bin:/opt/local/sbin
+
+# All of my git variables.
+ZSH_THEME_GIT_PROMPT_PREFIX=" on %{$fg[magenta]%}"
+ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[green]%}!"
+ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[green]%}?"
+ZSH_THEME_GIT_PROMPT_CLEAN=""
+
+export HISTSIZE=100000 SAVEHIST=100000 HISTFILE=~/.zhistory
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+setjdk() {
+  export JAVA_HOME=$(/usr/libexec/java_home -v $1)
+}
+
+. `brew --prefix`/etc/profile.d/z.sh
+
+expand-or-complete-with-dots() {      # This bunch of code displays red dots when autocompleting
+  echo -n "\e[31m......\e[0m"         # a command with the tab key, "Oh-my-zsh"-style.
+  zle expand-or-complete
+  zle redisplay
+}
+zle -N expand-or-complete-with-dots
+bindkey "^I" expand-or-complete-with-dots
+
+alias -g ...='../..'
+alias -g ....='../../..'
+alias -g .....='../../../..'
+alias -g ......='../../../../..'
+
+unsetopt CORRECT
+unalias rm
+unalias cp
