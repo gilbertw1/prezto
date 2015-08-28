@@ -94,3 +94,5 @@ alias -g ......='../../../../..'
 unsetopt CORRECT
 unalias rm
 unalias cp
+
+default_user=bgilbert

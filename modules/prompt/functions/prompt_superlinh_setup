@@ -42,8 +42,8 @@ function prompt_sorin_setup {
   zstyle ':prezto:module:git:info' verbose 'yes'
   zstyle ':prezto:module:git:info:action' format ':%%B%F{yellow}%s%f%%b'
   zstyle ':prezto:module:git:info:added' format ' %%B%F{green}✚%f%%b'
-  zstyle ':prezto:module:git:info:ahead' format ' %%B%F{yellow}⬆%f%%b'
-  zstyle ':prezto:module:git:info:behind' format ' %%B%F{yellow}⬇%f%%b'
+  zstyle ':prezto:module:git:info:ahead' format ' %%B%F{green}⬆%f%%b'
+  zstyle ':prezto:module:git:info:behind' format ' %%B%F{red}⬇%f%%b'
   zstyle ':prezto:module:git:info:branch' format '%F{208}%b%f'
   zstyle ':prezto:module:git:info:commit' format ':%F{green}%.7c%f'
   zstyle ':prezto:module:git:info:deleted' format ' %%B%F{red}✖%f%%b'
@@ -54,7 +54,7 @@ function prompt_sorin_setup {
   zstyle ':prezto:module:git:info:unmerged' format ' %%B%F{yellow}═%f%%b'
   zstyle ':prezto:module:git:info:untracked' format ' %%B%F{white}◼%f%%b'
   zstyle ':prezto:module:git:info:keys' format \
-    'prompt' '[%f$(coalesce "%b" "%p" "%c")%s]' \
+    'prompt' '[%f$(coalesce "%b" "%p" "%c")]%s%A%B' \
     'rprompt' '%A%B%S%a%d%m%r%U%u'
 
   # Define prompts.
